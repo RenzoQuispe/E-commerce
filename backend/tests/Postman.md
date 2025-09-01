@@ -58,15 +58,15 @@ POST - `http://localhost:8000/api/categories`
 ```
 ### Actualizar categorías:
 
-PUT - `http://localhost:8000/api/categories`
+PUT - `http://localhost:8000/api/categories?id=8`
 
 ```
 {
-"name": "Calzado",
-"slug": "calzado",
-"description": "Zapatos y zapatillas",
-"level": 1,
-"parent_id": 1
+    "name": "Calzado",
+    "slug": "calzado",
+    "description": "Zapatos y zapatillas",
+    "level": 1,
+    "parent_id": 1
 }
 ```
 ### Eliminar categoría: 

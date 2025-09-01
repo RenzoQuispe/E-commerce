@@ -18,19 +18,18 @@ CREATE TABLE categories (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- TABLA PRINCIPAL: PRODUCTOS HÍBRIDOS
--- Un registro puede ser producto simple O producto padre O variante
+-- Un registro puede ser producto simple o producto padre o variante
 CREATE TABLE products (
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     
     -- ARQUITECTURA HÍBRIDA CLAVE
-    parent_id BIGINT UNSIGNED NULL, -- NULL = producto simple/padre, NOT NULL = es variante
+    parent_id BIGINT UNSIGNED NULL, -- NULL = producto simple o padre, NOT NULL = es variante
     product_type ENUM('simple', 'parent', 'variant') NOT NULL DEFAULT 'simple',
     
     -- Información básica (aplica a todos los tipos)
     name VARCHAR(200) NOT NULL,
     slug VARCHAR(200) NOT NULL,
     description TEXT,
-    short_description VARCHAR(500),
     
     -- Relación con categoría
     category_id BIGINT UNSIGNED NOT NULL,

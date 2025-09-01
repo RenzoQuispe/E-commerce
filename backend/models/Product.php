@@ -13,12 +13,12 @@ class Product {
 
     public function create($data) {
         $sql = "INSERT INTO products (
-            parent_id, product_type, name, slug, description, short_description,
+            parent_id, product_type, name, slug, description,
             category_id, brand, model, sku, barcode, price, compare_price, cost_price,
             stock_quantity, manage_stock, stock_status, is_active, is_featured,
             featured_image, image_gallery
         ) VALUES (
-            :parent_id, :product_type, :name, :slug, :description, :short_description,
+            :parent_id, :product_type, :name, :slug, :description,
             :category_id, :brand, :model, :sku, :barcode, :price, :compare_price, :cost_price,
             :stock_quantity, :manage_stock, :stock_status, :is_active, :is_featured,
             :featured_image, :image_gallery
@@ -32,7 +32,6 @@ class Product {
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':slug', $data['slug']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':short_description', $data['short_description']);
         $stmt->bindParam(':category_id', $data['category_id']);
         $stmt->bindParam(':brand', $data['brand']);
         $stmt->bindParam(':model', $data['model']);
@@ -176,7 +175,7 @@ class Product {
     public function update($id, $data) {
         $sql = "UPDATE products SET 
                 name = :name, slug = :slug, description = :description, 
-                short_description = :short_description, category_id = :category_id,
+                category_id = :category_id,
                 brand = :brand, model = :model, sku = :sku, barcode = :barcode,
                 price = :price, compare_price = :compare_price, cost_price = :cost_price,
                 stock_quantity = :stock_quantity, manage_stock = :manage_stock,
@@ -191,7 +190,6 @@ class Product {
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':slug', $data['slug']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':short_description', $data['short_description']);
         $stmt->bindParam(':category_id', $data['category_id']);
         $stmt->bindParam(':brand', $data['brand']);
         $stmt->bindParam(':model', $data['model']);

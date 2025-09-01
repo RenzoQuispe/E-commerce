@@ -75,18 +75,18 @@ INSERT INTO attribute_values (attribute_id, value, slug) VALUES
 (4, 'Talla 44', '44');
 
 -- Productos simples en diferentes categorías
-INSERT INTO products (name, slug, description, short_description, category_id, brand, sku, price, compare_price, cost_price, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
-('Auriculares Bluetooth Premium', 'auriculares-bluetooth-premium', 'Auriculares inalámbricos con cancelación de ruido y 30 horas de batería', 'Sonido de alta calidad con cancelación de ruido', 12, 'AudioTech', 'AUD-BT-001', 89.99, 119.99, 45.00, 50, 'simple', TRUE, TRUE, 'auriculares-premium.jpg'),
+INSERT INTO products (name, slug, description, category_id, brand, sku, price, compare_price, cost_price, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
+('Auriculares Bluetooth Premium', 'auriculares-bluetooth-premium', 'Auriculares inalámbricos con cancelación de ruido y 30 horas de batería', 12, 'AudioTech', 'AUD-BT-001', 89.99, 119.99, 45.00, 50, 'simple', TRUE, TRUE, 'auriculares-premium.jpg'),
 
-('Lámpara de Mesa Moderna', 'lampara-mesa-moderna', 'Lámpara de diseño minimalista con luz LED regulable', 'Iluminación perfecta para tu espacio de trabajo', 15, 'HomeStyle', 'LAMP-001', 45.50, 65.00, 22.75, 25, 'simple', TRUE, FALSE, 'lampara-moderna.jpg'),
+('Lámpara de Mesa Moderna', 'lampara-mesa-moderna', 'Lámpara de diseño minimalista con luz LED regulable', 15, 'HomeStyle', 'LAMP-001', 45.50, 65.00, 22.75, 25, 'simple', TRUE, FALSE, 'lampara-moderna.jpg'),
 
-('Mochila Deportiva', 'mochila-deportiva', 'Mochila resistente al agua con múltiples compartimentos', 'Perfecta para el gimnasio o actividades outdoor', 17, 'SportGear', 'MOCH-001', 35.00, 0.00, 18.00, 75, 'simple', TRUE, FALSE, 'mochila-deportiva.jpg'),
+('Mochila Deportiva', 'mochila-deportiva', 'Mochila resistente al agua con múltiples compartimentos', 17, 'SportGear', 'MOCH-001', 35.00, 0.00, 18.00, 75, 'simple', TRUE, FALSE, 'mochila-deportiva.jpg'),
 
-('Crema Facial Hidratante', 'crema-facial-hidratante', 'Crema hidratante con ácido hialurónico para todo tipo de piel', '24 horas de hidratación profunda', 5, 'BeautyLab', 'CREAM-001', 28.99, 35.99, 12.50, 100, 'simple', TRUE, TRUE, 'crema-facial.jpg');
+('Crema Facial Hidratante', 'crema-facial-hidratante', 'Crema hidratante con ácido hialurónico para todo tipo de piel', 5, 'BeautyLab', 'CREAM-001', 28.99, 35.99, 12.50, 100, 'simple', TRUE, TRUE, 'crema-facial.jpg');
 
 -- CAMISETA BÁSICA (Producto Padre)
-INSERT INTO products (name, slug, description, short_description, category_id, brand, sku, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
-('Camiseta Básica Unisex', 'camiseta-basica-unisex', 'Camiseta de algodón 100% con corte unisex. Disponible en múltiples colores y tallas', 'Comodidad y estilo en una prenda esencial', 6, 'BasicWear', 'CAM-BASIC', 0, 'parent', TRUE, TRUE, 'camiseta-basica.jpg');
+INSERT INTO products (name, slug, description, category_id, brand, sku, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
+('Camiseta Básica Unisex', 'camiseta-basica-unisex', 'Camiseta de algodón 100% con corte unisex. Disponible en múltiples colores y tallas', 6, 'BasicWear', 'CAM-BASIC', 0, 'parent', TRUE, TRUE, 'camiseta-basica.jpg');
 
 -- Variantes de Camiseta - Negro S, M, L
 INSERT INTO products (parent_id, name, slug, category_id, brand, sku, price, cost_price, stock_quantity, product_type, is_active, featured_image) VALUES
@@ -105,8 +105,8 @@ INSERT INTO products (parent_id, name, slug, category_id, brand, sku, price, cos
 (5, 'Camiseta Básica Unisex - Azul L', 'camiseta-basica-unisex-azul-l', 6, 'BasicWear', 'CAM-BASIC-AZU-L', 19.99, 8.50, 25, 'variant', TRUE, 'camiseta-azul-l.jpg');
 
 -- SMARTPHONE (Producto Padre)
-INSERT INTO products (name, slug, description, short_description, category_id, brand, sku, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
-('Smartphone Galaxy Pro', 'smartphone-galaxy-pro', 'Smartphone de última generación con cámara de 108MP y pantalla AMOLED', 'La tecnología más avanzada en tus manos', 10, 'TechMobile', 'SMART-GP', 0, 'parent', TRUE, TRUE, 'smartphone-galaxy.jpg');
+INSERT INTO products (name, slug, description, category_id, brand, sku, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
+('Smartphone Galaxy Pro', 'smartphone-galaxy-pro', 'Smartphone de última generación con cámara de 108MP y pantalla AMOLED', 10, 'TechMobile', 'SMART-GP', 0, 'parent', TRUE, TRUE, 'smartphone-galaxy.jpg');
 
 -- Variantes de Smartphone por capacidad
 INSERT INTO products (parent_id, name, slug, category_id, brand, sku, price, cost_price, stock_quantity, product_type, is_active, featured_image) VALUES
@@ -115,8 +115,8 @@ INSERT INTO products (parent_id, name, slug, category_id, brand, sku, price, cos
 (15, 'Smartphone Galaxy Pro 512GB', 'smartphone-galaxy-pro-512gb', 10, 'TechMobile', 'SMART-GP-512', 999.99, 600.00, 5, 'variant', TRUE, 'smartphone-512gb.jpg');
 
 -- ZAPATILLAS DEPORTIVAS (Producto Padre)
-INSERT INTO products (name, slug, description, short_description, category_id, brand, sku, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
-('Zapatillas Running Elite', 'zapatillas-running-elite', 'Zapatillas de running profesionales con tecnología de amortiguación avanzada', 'Máximo rendimiento en cada pisada', 18, 'RunPro', 'ZAP-RUN-ELITE', 0, 'parent', TRUE, TRUE, 'zapatillas-running.jpg');
+INSERT INTO products (name, slug, description, category_id, brand, sku, stock_quantity, product_type, is_active, is_featured, featured_image) VALUES
+('Zapatillas Running Elite', 'zapatillas-running-elite', 'Zapatillas de running profesionales con tecnología de amortiguación avanzada', 18, 'RunPro', 'ZAP-RUN-ELITE', 0, 'parent', TRUE, TRUE, 'zapatillas-running.jpg');
 
 -- Variantes de Zapatillas por color y talla (solo algunas combinaciones)
 INSERT INTO products (parent_id, name, slug, category_id, brand, sku, price, cost_price, stock_quantity, product_type, is_active, featured_image) VALUES
